@@ -1,12 +1,11 @@
 import React from 'react';
 
-const Persons = ({
-  items,
-  clickHandler,
-}: {
+type personProps = {
   items: string[];
   clickHandler: (name: string) => void;
-}) => {
+};
+
+const Persons = ({ items, clickHandler }: personProps) => {
   return (
     <div className='h-screen flex justify-center items-center flex-col'>
       {items.map((item, index) => (
