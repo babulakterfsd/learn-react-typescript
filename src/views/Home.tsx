@@ -1,13 +1,22 @@
 import React from 'react';
 import Person from '../components/Person';
 
-const Home = () => {
-  const items: string[] = ['Bahar', 'Forid', 'Sona'];
-  const nameHighlighter = (name: string): void => console.log(name);
+const user = {
+  name: 'John Doe',
+  age: 25,
+  languages: ['JavaScript', 'TypeScript', 'Python', 'Java', 'C++'],
+};
+const user2 = {
+  name: 'Babul Akter',
+  age: 30,
+  languages: ['JavaScript', 'TypeScript', 'React', 'Java', 'C++'],
+};
 
+const Home = () => {
   return (
-    <div>
-      <Person items={items} clickHandler={nameHighlighter} />
+    <div className='flex justify-around'>
+      <Person user={user} />
+      <Person user={user2} />
     </div>
   );
 };
