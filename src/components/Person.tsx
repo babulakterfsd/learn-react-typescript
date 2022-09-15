@@ -1,33 +1,83 @@
-import React from 'react';
+import React, { useReducer } from 'react';
 
-interface userType {
-  name: string;
-  age: number;
-  languages: string[];
-}
+const INCREMENT = 'INCREMENT';
+const INCREMENTBYAMOUNT = 'INCREMENTBYAMOUNT';
+const RESET = 'RESET';
+const DECREMENT = 'DECREMENT';
 
-type personProps = {
-  user: userType;
+const initialState = { count: 0 };
+type counterState = {
+  count: number;
 };
 
-const Persons = ({ user }: personProps) => {
-  const { name, age, languages } = user;
+type IncrementActionType = { type: typeof INCREMENT };
+type IncrementByAmountActionType = {
+  type: typeof INCREMENTBYAMOUNT;
+  payload: number;
+};
+type ResetActionType = { type: typeof RESET };
+type DecrementActionType = { type: typeof DECREMENT };
+
+type counterActionType =
+  | IncrementActionType
+  | DecrementActionType
+  | ResetActionType
+  | IncrementByAmountActionType;
+
+const reducer = (state: counterState, action: counterActionType) => {
+  switch (action.type) {
+    case INCREMENT:
+      return { count: state.count + 1 };
+    case INCREMENTBYAMOUNT:
+      return { count: state.count + action.payload };
+    case RESET:
+      return { count: 0 };
+    case DECREMENT:
+      return { count: state.count - 1 };
+    default:
+      throw new Error();
+  }
+};
+
+const Persons = () => {
+  const [state, dispatch] = useReducer(reducer, initialState);
 
   return (
     <div className='h-screen flex justify-center items-center flex-col text-center'>
-      <div className='h-56 w-[400] p-5 rounded-md bg-slate-500 text-white'>
-        <h2 className='text-lg'>{name}</h2>
-        <p className='text-md'>{age}</p>
-        <div className='flex justify-center items-center'>
-          {languages.map((language: string, index: number) => (
-            <p
-              className='text-sm mx-2 bg-green-300 text-green-600 rounded-md py-0.5 px-1 font-semibold'
-              key={index}
-            >
-              {language}
-            </p>
-          ))}
-        </div>
+      <h1 className='text-2xl'>{state.count}</h1>
+      <div className='flex mt-8'>
+        <button
+          className='bg-green-300 text-green-500 p-1 rounded-md'
+          onClick={() => {
+            dispatch({ type: INCREMENT });
+          }}
+        >
+          increment
+        </button>
+        <button
+          className='bg-green-300 text-green-500 p-1 rounded-md mx-4'
+          onClick={() => {
+            dispatch({ type: INCREMENTBYAMOUNT, payload: 5 });
+          }}
+        >
+          increment by 5
+        </button>
+        <button
+          className='bg-pink-300 text-pink-500 p-1 rounded-md mx-4'
+          onClick={() => {
+            dispatch({ type: RESET });
+          }}
+        >
+          reset
+        </button>
+        <button
+          className='bg-red-300 text-red-500 p-1 rounded-md'
+          onClick={() => {
+            dispatch({ type: DECREMENT });
+          }}
+        >
+          decrement
+        </button>
       </div>
     </div>
   );
