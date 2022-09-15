@@ -6,7 +6,7 @@ const RESET = 'RESET';
 const DECREMENT = 'DECREMENT';
 
 const initialState = { count: 0 };
-type counterState = {
+type counterStateType = {
   count: number;
 };
 
@@ -24,7 +24,7 @@ type counterActionType =
   | ResetActionType
   | IncrementByAmountActionType;
 
-const reducer = (state: counterState, action: counterActionType) => {
+const reducer = (state: counterStateType, action: counterActionType) => {
   switch (action.type) {
     case INCREMENT:
       return { count: state.count + 1 };
