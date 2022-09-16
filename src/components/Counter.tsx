@@ -39,7 +39,7 @@ const reducer = (state: counterStateType, action: counterActionType) => {
   }
 };
 
-const Persons = () => {
+const Counter = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   return (
@@ -83,4 +83,4 @@ const Persons = () => {
   );
 };
 
-export default Persons;
+export default Counter;

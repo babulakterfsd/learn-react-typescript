@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import Person from '../components/Person';
+import Counter from '../components/Counter';
 
 const Home = () => {
   return (
     <div className='flex justify-around'>
-      <Person />
+      <Counter />
     </div>
   );
 };
