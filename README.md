@@ -13,6 +13,6 @@ status: 'loading' | 'success' | 'error'
 
 ekhon ei Status component jekhan thekei call koruk, status naame je props ashbe, tar value sunirdisto vabe oi tintar ektai hote hobe.
 
-5. button click er khetre event er type hoy React.MouseEvent<HTMLButtonElement>
-6. input event er onChange event er khetre type hoy React.ChangeEvent<HTMLInputElement>
+5. button click er khetre event er type hoy React.MouseEvent< HTMLButtonElement >
+6. input event er onChange event er khetre type hoy React.ChangeEvent< HTMLInputElement >
 7. jodi css styles props akare ashe, tahole tar type hoy React.CSSProperties
