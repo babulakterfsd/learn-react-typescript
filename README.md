@@ -16,3 +16,41 @@ ekhon ei Status component jekhan thekei call koruk, status naame je props ashbe,
 5. button click er khetre event er type hoy React.MouseEvent< HTMLButtonElement >
 6. input event er onChange event er khetre type hoy React.ChangeEvent< HTMLInputElement >
 7. jodi css styles props akare ashe, tahole tar type hoy React.CSSProperties
+8. ekta valo project structure maintain korte gele ashole ekta pattern follow kora uchit. jemon kono ekta component er prop types oi component er jsx define krar uporei na likhe different ekta file e likhe sekhan theke import kore ana uchit. jemon Person namok ekta component er prop types gula thakbe person.types.ts file e
+
+9. type gula reuse kora jay ekta type ke ar ekta type er jekono property er type hishebe use kore.
+
+10. generics er moddhe or operator diye multiple type define kore deya jay.
+    type authUser = {
+    name: string;
+    email: string
+    }
+
+    const [user, setUser] = useState< authUser | null >(null)
+    //login
+    const handleLogin = () => {
+    setuser({
+    name: 'Babul',
+    email: 'babulakterfsd@gmil.com'
+    })
+    }
+    //logout
+    const handleLogout = () => {
+    setUser(null)
+    }
+
+    return (
+    < div >
+    < p > {user?.name} </ p > // chaining na korle user to null o hote pare, tkhn error dibe.
+    < / div >
+    )
+
+    maane ekhane initial value deya hoyeche null, but future e change hote pare user er type. tai aage thekei logical or use kore evabe deya hoyeche.
+
+11. ts with react e kivabe useState use kora hoy generics er sathe, seta User component dekhano hoyeche
+12. type assertion naamer ekta jinish ache. jemon 11 number point er khetre jodi emon hoy j user ekbar login korle ar logout korbe na ba jekono karonei hok, user always thakbe.. tahole to shob jaygay optional chaining use korar dorkar nai. sekhetre type assertion use korte pari evabe :
+    const [user, setUser] = useState< authUser >({} as authUser)
+
+    bass hoye gelo. kintu sabdhanota obolombon kora uchit eta use korar khetre .
+
+13.
