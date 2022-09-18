@@ -1,9 +1,9 @@
-const Home = () => {
+const NotFound = () => {
   return (
     <div className='flex justify-around h-screen items-center'>
-      <p>Welcome to homepage</p>
+      <p>page not found</p>
     </div>
   );
 };
 
-export default Home;
+export default NotFound;

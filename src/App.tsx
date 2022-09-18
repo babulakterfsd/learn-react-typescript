@@ -1,10 +1,16 @@
-import Home from './views/Home';
+import { BrowserRouter } from 'react-router-dom';
+import AllRoutes from './components/AllRoutes';
+import Navbar from './components/Navbar';
+import AuthProvider from './context/AuthProvider';
 
 const App = () => {
   return (
-    <div>
-      <Home />
-    </div>
+    <AuthProvider>
+      <BrowserRouter>
+        <Navbar />
+        <AllRoutes />
+      </BrowserRouter>
+    </AuthProvider>
   );
 };
 

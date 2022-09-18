@@ -18,10 +18,16 @@ const User = () => {
   return (
     <div>
       <p>{user?.name ? user?.name : 'Guest'}</p>
-      <button onClick={() => handleLogin()} className='mx-2'>
-        Login
-      </button>
-      <button onClick={() => handleLogout()}>Logout</button>
+      {!user?.name && (
+        <button onClick={() => handleLogin()} className='mx-2'>
+          Login
+        </button>
+      )}
+      {user?.name && (
+        <button onClick={() => handleLogout()} className='mx-2'>
+          Logout{' '}
+        </button>
+      )}
     </div>
   );
 };
