@@ -16,6 +16,8 @@ type AuthContextType = {
   setUser: React.Dispatch<React.SetStateAction<UserType | null>>;
   setLoading: React.Dispatch<React.SetStateAction<boolean>>;
   logout: () => void;
+  btcAmount: number;
+  setBtcAmount: React.Dispatch<React.SetStateAction<number>>;
 };
 
 export const AuthContext = createContext<AuthContextType>({} as AuthContextType);
