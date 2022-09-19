@@ -6,25 +6,8 @@ const Login = () => {
   const { setUser } = useAuth();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [timer, setTimer] = useState(0);
   const navigate = useNavigate();
   const emailRef = useRef<HTMLInputElement>(null);
-
-  const intervalRef = useRef<number | null>(null);
-  const stopTimer = () => {
-    if (intervalRef.current) {
-      window.clearInterval(intervalRef.current);
-    }
-  };
-
-  useEffect(() => {
-    intervalRef.current = window.setInterval(() => {
-      setTimer((timer) => timer + 1);
-    }, 1000);
-    return () => {
-      stopTimer();
-    };
-  }, []);
 
   useEffect(() => {
     if (emailRef.current) {
@@ -41,8 +24,6 @@ const Login = () => {
 
   return (
     <div className='flex justify-around h-screen items-center flex-col'>
-      <h1>{timer}</h1>
-      <button onClick={() => stopTimer()}>stop timer</button>
       <form>
         <input
           type='email'
