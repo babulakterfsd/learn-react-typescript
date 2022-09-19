@@ -6,7 +6,7 @@ const Home = () => {
     setBtcAmount((prev) => prev + 1);
   };
   return (
-    <div className='flex justify-around h-screen items-center'>
+    <div className='flex justify-around h-screen items-center flex-col'>
       <p>Welcome to homepage</p>
       {user?.email && (
         <button onClick={() => handleBTC()} className='py-0.5 px-1 bg-green-300 text-green-600'>

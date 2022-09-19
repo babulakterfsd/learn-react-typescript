@@ -53,4 +53,23 @@ ekhon ei Status component jekhan thekei call koruk, status naame je props ashbe,
 
     bass hoye gelo. kintu sabdhanota obolombon kora uchit eta use korar khetre .
 
-13.
+13. useRef use korar somoy evabe type guard use korte hoy.. maane condition check korte hoy. karon typescript j current er value pabei tar kono guaranty nai.
+
+const emailRef = useRef<HTMLInputElement>(null);
+
+useEffect(() => {
+if (emailRef.current) {
+emailRef.current.focus();
+}
+}, []);
+
+<input
+type='email'
+placeholder='email'
+name='email'
+className='border-2 mr-2 focus:outline-none'
+ref={emailRef}
+onChange={(e) => setEmail(e.target.value)}
+/>
+
+14.
