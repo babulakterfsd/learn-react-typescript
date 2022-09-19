@@ -75,4 +75,6 @@ onChange={(e) => setEmail(e.target.value)}
 
 14. generics er jonno dashboard er moddhe userList namer ekta component baniyechi. okhane shob deya ache kivabe generics use korte hoy.
 
-15.
+15. props restriction ar never er use niye ei video ta best [https://www.youtube.com/watch?v=yqn9Fkv7f2M&list=PLC3y8-rFHvwi1AXijGTKM0BKtHzVC-LSK&index=20&ab_channel=Codevolution]
+
+16.
