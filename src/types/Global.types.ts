@@ -8,7 +8,7 @@ export type AuthProviderProps = {
 };
 
 export type AuthContextType = {
-  user: any;
+  user: UserType | null;
   loading: boolean;
   setUser: React.Dispatch<React.SetStateAction<UserType | null>>;
   setLoading: React.Dispatch<React.SetStateAction<boolean>>;
