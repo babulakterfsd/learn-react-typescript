@@ -1,24 +1,6 @@
 import React, { createContext } from 'react';
 import AllStates from '../hooks/useAllState';
-
-type AuthProviderProps = {
-  children: React.ReactNode;
-};
-
-type UserType = {
-  email: string;
-  password: string;
-};
-
-type AuthContextType = {
-  user: any;
-  loading: boolean;
-  setUser: React.Dispatch<React.SetStateAction<UserType | null>>;
-  setLoading: React.Dispatch<React.SetStateAction<boolean>>;
-  logout: () => void;
-  btcAmount: number;
-  setBtcAmount: React.Dispatch<React.SetStateAction<number>>;
-};
+import { AuthProviderProps, AuthContextType } from '../types/Global.types';
 
 export const AuthContext = createContext<AuthContextType>({} as AuthContextType);
 

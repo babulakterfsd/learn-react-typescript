@@ -14,7 +14,7 @@ const Navbar = () => {
 
   return (
     <div className='absolute right-0 top-0'>
-      <button className='bg-lime-300 text-lime-800 p-2 rounded-full font-semibold'>
+      <button className='bg-lime-300 text-lime-800 p-2 rounded-full font-semibold cursor-none'>
         {btcAmount}
       </button>
       <Link to='/'>

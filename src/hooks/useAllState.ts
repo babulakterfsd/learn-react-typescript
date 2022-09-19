@@ -1,9 +1,5 @@
 import { useState } from 'react';
-
-type UserType = {
-  email: string;
-  password: string;
-};
+import { UserType } from '../types/Global.types';
 
 const AllStates = () => {
   const [user, setUser] = useState<UserType | null>(null);
