@@ -4,7 +4,8 @@
 
 1.  props akare ja ashbe setar type direct define kore deya
 2.  children akare string ba onno kichu gele seta define kore deya
-3.  children akare jodi kono component jay , tahole tar type hobe React.ReactNode
+3.  children akare jodi kono component jay , tahole tar type hobe React.ReactNode. ar props akare jodi component pathano hoy tahole tar type hobe React.ComponentType [https://www.youtube.com/watch?v=qvdnTfyv7y8&list=PLC3y8-rFHvwi1AXijGTKM0BKtHzVC-LSK&index=18&ab_channel=Codevolution]
+
 4.  kono props er value jodi nirdisto kichu hoy, tahole seta direct likhe deya jaay oi component er jekhane prop types define kora hoy , sekhane .. jemon
 
 type StatusProps = {
@@ -72,4 +73,6 @@ ref={emailRef}
 onChange={(e) => setEmail(e.target.value)}
 />
 
-14.
+14. generics er jonno dashboard er moddhe userList namer ekta component baniyechi. okhane shob deya ache kivabe generics use korte hoy.
+
+15.

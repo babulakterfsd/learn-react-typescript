@@ -9,7 +9,7 @@ function PrivateOutlet() {
   if (loading) {
     return <div>Loading....</div>;
   }
-  return user ? <Outlet /> : <Navigate to='/login' state={location.pathname} replace />;
+  return user.email ? <Outlet /> : <Navigate to='/login' state={location.pathname} replace />;
 }
 
 export default PrivateOutlet;
