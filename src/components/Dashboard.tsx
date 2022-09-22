@@ -1,6 +1,6 @@
 import useAuth from '../hooks/useAuth';
-import UsersList from './UsersList';
 import { userListType } from '../types/Global.types';
+import UsersList from './UsersList';
 
 const userList: userListType[] = [
   {
@@ -28,7 +28,7 @@ const Dashboard = () => {
       <button onClick={() => handleBTC()} className='py-0.5 px-1 bg-green-300 text-green-600 mb-12'>
         Earn BTC
       </button>
-      <UsersList currentUserList={userList} onClick={(user) => console.log(user.name)} />
+      <UsersList currentUserList={userList} onClick={(user) => alert(user.name)} />
     </div>
   );
 };
